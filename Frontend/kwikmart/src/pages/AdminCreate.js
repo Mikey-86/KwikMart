@@ -1,7 +1,10 @@
 import React from "react";
+import CreateProduct from "../components/CreateProduct/CreateProduct"
  
-const Blogs = () => {
-    return <h1>You can write your blogs!</h1>;
+const AdminCreate = () => {
+    return(
+        <CreateProduct />
+    )
 };
  
-export default Blogs;
+export default AdminCreate;

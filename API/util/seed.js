@@ -27,7 +27,7 @@ const generateProducts = (num) => {
 };
 
 //Calling method to generate products
-const products = generateProducts(0);
+const products = generateProducts(15);
 
 
     productModel.insertMany(products)

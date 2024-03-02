@@ -51,12 +51,13 @@ router.get('/products/:id', async (req, res) =>{
 //delete: delete selectable products (admin)
 router.delete('/remove-products/:id', async (req, res) =>{
     try{
-        const ids = req.body.ids;
+        //const ids = req.body.ids;
 
-        for(const id of ids){
-            const data = await ProductModel.findByIdAndDelete(id)
+        //for(const id of ids){
+            const data = await ProductModel.findByIdAndDelete(req.params.id)
             res.send("Product: " + data.name + " has been deleted")
-        }
+
+        //}
     }
     catch(error){
         res.status(500).json({message: error.message})

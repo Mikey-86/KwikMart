@@ -21,9 +21,25 @@ function Navbar() {
                 <NavLink to="/Orders" activeStyle>
                     Orders
                 </NavLink>
+                <NavLink to="/cart" activeStyle>
+                    Cart
+                </NavLink>
+                <NavLink to="/signup" activeStyle>
+                    Signup
+                </NavLink>
                 <NavLink to="/adminCreate" activeStyle>
                     Admin: Create
                 </NavLink>
+                {/* <NavLink to="/adminOrders" activeStyle>
+                    Admin: View Orders
+                </NavLink>
+                <NavLink to="/adminCreateOrders" activeStyle>
+                    Admin: New Order
+                </NavLink> */}
+                <NavLink to="/adminProducts" activeStyle>
+                    Admin: Products
+                </NavLink>
+                
             </NavMenu>
         </nav>
         </>

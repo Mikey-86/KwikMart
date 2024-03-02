@@ -4,9 +4,11 @@ import './CreateProduct.css';
 
 export default function Create() {
     const [form, setForm] = useState({
-        name: "",
-        description: "",
-        price: 0,
+        paid: Boolean,
+        customerId: "",
+        products: [],
+        total: 0
+        
     });
 
 const navigate = useNavigate();
@@ -22,53 +24,50 @@ function updateForm(value) {
 async function onSubmit(e) {
     e.preventDefault();
     // When a post request is sent to the create url, we add a new record to the database.
-    const newProduct = { ...form };
-    await fetch("http://localhost:5000/api/product", {
+    const newOrder = { ...form };
+    await fetch("http://localhost:5000/api/order", {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
         'Access-Control-Allow-Origin':'*',
         'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'
     },
-        body: JSON.stringify(newProduct),
+        body: JSON.stringify(newOrder),
     }).catch((error) => {
         window.alert(error);
         return;
     });
-    setForm({ name: "", description: "", price: 0 });
+    setForm({ paid: false, customerId: "", products:[], total: 0 });
     navigate("/");
 }
 
   // This following section will display the form that takes the input from the user.
 return (
     <div>
-        <h3>Create New Product</h3>
+        <h3>Create New Order</h3>
         <form onSubmit={onSubmit}>
             <div className="form-group">
-            <label htmlFor="name">Name</label>
-            <br />
+            <label htmlFor="name">Paid</label>
             <input
-                type="text"
+                type="checkbox"
                 className="form-control"
-                id="name"
-                value={form.name}
-                onChange={(e) => updateForm({ name: e.target.value })}
+                id="paid"
+                value={form.paid}
+                onChange={(e) => updateForm({ paid: e.target.value })}
             />
         </div>
         <div className="form-group">
-            <label htmlFor="description">Description</label>
-            <br />
+            <label htmlFor="description">CustomerId</label>
             <input
                 type="text"
                 className="form-control"
-                id="description"
-                value={form.description}
-                onChange={(e) => updateForm({ description: e.target.value })}
+                id="customerId"
+                value={form.customerId}
+                onChange={(e) => updateForm({ customerId: e.target.value })}
             />
         </div>
         <div className="form-group">
             <label htmlFor="price">Price</label>
-            <br />
             <input
                 type="price"
                 className="form-control"
