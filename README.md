@@ -17,7 +17,7 @@ The connection string will be needed.
 
 #### Steps:
 1. Clone both (frontend and backend) projects into same solution file.
-2. Creat 2 terminals and cd into "frontend" for the frontend in one terminal and "API" for backend
+2. Creat 2 terminals and cd into "frontend/kwikmart" for the frontend in one terminal and "API" for backend
 3. "npm install" must be run for both terminals
 4. create a file called ".env" in the root directory of the backend to add Mongodb connection string using: "DATABASE_URL = "mongodb+srv://<username>:<password>@cluster0.jllnnug.mongodb.net/"
 5. run "npm start" for frontend and backend. Database will seed with 15 random entries for product.
