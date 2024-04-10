@@ -1,5 +1,5 @@
 # KwikMart
-Andile solutions ecommerce project
+ecommerce project (Currently incomplete)
 
 -------------------------------------------------------
 ## About the app and what I learnt
